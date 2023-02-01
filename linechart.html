@@ -1,7 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Stepped Area Chart - Sanders, Martinez, Read</title>
+    <title>Line Chart - Sanders, Martinez, Read</title>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="data.js"></script>
     <script type="text/javascript">
@@ -12,13 +14,13 @@
             var data = google.visualization.arrayToDataTable(renewals3);
 
             var options = {
-                title: 'Annual Renewals per Region',
-                vAxis: {title: 'Renewals'},
-                isStacked: true,
+                title: 'Annual Renewals by Region',
+                curveType: 'function',
+                legend: {position: 'right'},
                 colors: paired12
             };
 
-            var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
             chart.draw(data, options);
         }
@@ -26,6 +28,6 @@
 </head>
 <body>
     <a href="index.html">Back</a>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
 </body>
 </html>
