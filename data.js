@@ -164,7 +164,7 @@ function longToWide(long) {
         var count = value[2];
 
         // If this is a new region, add it to the list of regions
-        if (!regions.includes(region) && region !== "?")
+        if (!regions.includes(region) && region !== "?" && region !== "Partner" && region !== "Prospect")
             regions.push(region);
 
         if (year !== 2023) {
