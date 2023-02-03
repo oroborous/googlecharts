@@ -15,6 +15,26 @@
         }
     </style>
     <title>Google Charts</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="data.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+
+            for (let i = 0; i < renewals3[0].length; i++) {
+                data.addColumn(i === 0 ? 'string' : 'number' , renewals3[0][i]);
+            }
+
+            data.addRows(renewals3.slice(1));
+
+            var table = new google.visualization.Table(document.getElementById('table_div'));
+
+            table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        }
+    </script>
 </head>
 <body>
     <h1>COSC 5500: Google Charts</h1>
@@ -24,5 +44,7 @@
         <li><a href="steppedarea.html">Stepped Area Chart</a></li>
         <li><a href="linechart.html">Line Chart</a></li>
     </ul>
+
+    <div id="table_div"></div>
 </body>
 </html>
