@@ -29,6 +29,29 @@
             top: 30px; /* chartArea top  */
             left: 180px; /* chartArea left */
         }
+
+        .callout1 {
+            color: black;
+            font-family: 'Verdana';
+            font-size: 12px;
+            margin-top: 60px;
+            margin-left: 470px;
+            rotate: 45deg;
+        }
+
+        .callout2 {
+            color: black;
+            font-family: 'Verdana';
+            font-size: 12px;
+            margin-top: 95px;
+            margin-left: 350px;
+            rotate: 45deg;
+        }
+
+        p {
+            margin: auto auto;
+            width: 50vw;
+        }
     </style>
     <title>Line Chart - Sanders, Martinez, Read</title>
 
@@ -81,13 +104,19 @@
     <div class="chartWithOverlay">
         <div id="curve_chart" style="width: 900px; height: 500px"></div>
         <div class="overlay">
-            <div style="color: black; font-family:'Arial Black'; font-size: 12px; margin-top:70px; margin-left:260px;">
-                Renewal Specialist Team Launched
+            <div class="callout1">
+                Renewal Specialist<br>Team Launched
             </div>
-            <div style="color: black; font-family:'Arial Black'; font-size: 12px; margin-top:140px; margin-left:160px;">
-                Integrated Advisen and ITC Products
+            <div class="callout2">
+                Integrated<br>Advisen and<br>ITC Products
             </div>
         </div>
     </div>
+
+    <p>
+        This chart shows annual customer renewals for a software-as-a-service company.
+        The company launched two initiatives to increase renewals: one in 2021 and the other in 2022.
+        They requested a graphic to visualize the renewal rate before and after the initiatives.
+    </p>
 </body>
 </html>
