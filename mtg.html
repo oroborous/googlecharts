@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Revenue for Wizards of the Coast</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="chartWithMarkerOverlay">
+        <div id="chart_div"></div>
+    </div>
+
+    <div>
+        <a href="https://www.zippia.com/wizards-of-the-coast-careers-44785/revenue/">Source for financial data</a>
+        <br>
+        <a href="https://www.cbr.com/mtg-arena-vs-mtg-online-which-one-to-play-in-2023">MTG Online and MTG Arena release
+            dates</a>
+    </div>
+
+    <script>
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawBackgroundColor);
+
+        function drawBackgroundColor() {
+            var data = new google.visualization.arrayToDataTable([['Year', 'Revenue', {
+                'type': 'string',
+                'role': 'style'
+            }],
+                ['2000', 3.81, null],
+                ['2001', 2.9, null],
+                ['2002', 2.8, 'point { size: 18; shape-type: star; fill-color: #a52714; }'], // "MTG Online released", null],
+                ['2003', 3.1, null],
+                ['2004', 3.0, null],
+                ['2005', 3.1, null],
+                ['2006', 3.2, null],
+                ['2007', 3.8, null],
+                ['2008', 4.0, null],
+                ['2009', 4.1, null],
+                ['2010', 4.0, null],
+                ['2011', 4.3, null],
+                ['2012', 4.1, null],
+                ['2013', 4.1, null],
+                ['2014', 4.3, null],
+                ['2015', 4.4, null],
+                ['2016', 5.0, null],
+                ['2017', 5.2, null],
+                ['2018', 4.6, 'point { size: 18; shape-type: star; fill-color: #a52714; }'], // "MTG Arena released", null],
+                ['2019', 4.7, null],
+                ['2020', 5.5, null],
+                ['2021', 6.4, null],
+                ['2022', 5.9, null]
+            ]);
+
+            var options = {
+                title: "Annual Revenue for Wizards of the Coast",
+                subtitle: "in billions of dollars (USD)",
+                width: 900,
+                height: 500,
+                pointSize: 7,
+                dataOpacity: 0.3,
+                hAxis: {
+                    title: 'Year',
+                },
+                vAxis: {
+                    title: 'Revenue ($B)',
+                    format: '$0.0b'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+</html>
